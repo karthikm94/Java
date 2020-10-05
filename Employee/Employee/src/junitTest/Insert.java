@@ -1,12 +1,8 @@
 package junitTest;
-
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-
 import company.EmpJdbc;
 import company.EmpPojo;
-
-
 
 public class Insert {
 	
@@ -15,53 +11,35 @@ public class Insert {
 	 	Else the Test Will Fail */
 		@Test
 		public  void test_UserBased_Insertion() throws Exception {
-			
-		  System.out.println(" manual Based Testng ");
-		  EmpJdbc emp = new EmpJdbc();
-
-		  EmpPojo e = new EmpPojo("vinay","Hyderabad","2010-01-01",1,"1994-01-01");
-
+		 System.out.println(" manual Based Testng ");
+		 EmpJdbc emp = new EmpJdbc();
+         EmpPojo e = new EmpPojo("vinay","Hyderabad","2010-01-01",1,"1994-01-01");
 		  int res = emp.createEmp(e);
-
 		  assertEquals(1,res);
-
-		  if(res==1)
-		  {
+		  if(res==1) {
 		  System.out.println("manual Based Testing Passed"); 
 		  }
-		  else
-		  {
+		  else{
 		  System.out.println(" manual Based Testing failed"); 	  
 		  }
-	
 	}
 	
-
 		/* Generates ERROR!!! 
-	
 	/*  Testing the Functionality with the Faulty Inputs given manually  to Test, should Fail
 	 	Else the Test Will pass */
 	@Test
 		public  void test_Error_Insertion() throws Exception {
-			
-			  System.out.println(" manual Based Testng ");
+			System.out.println(" manual Based Testng ");
 			  EmpJdbc emp = new EmpJdbc();
-
 			  EmpPojo e = new EmpPojo("vinay","Hyderabad","2010-31-1",1,"19940-01-01");
-
 			  int res = emp.createEmp(e);
-
 			  assertEquals(1,res);
-
-			  if(res==1)
-			  {
+			  if(res==1){
 			  System.out.println("manual Based Error Testing Passed"); 
 			  }
-			  else
-			  {
+			  else{
 			  System.out.println(" manual Based  Error Testing failed"); 	  
-			  }
-		
+			  }	  
 		}
 	}
 
