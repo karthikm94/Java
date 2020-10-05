@@ -1,0 +1,22 @@
+package company;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+class jUnitTesting {
+
+@Test
+
+public void testIt() throws Exception {
+
+EmpJdbc emp = new EmpJdbc();
+
+EmpPojo e = new EmpPojo("abc","blr","2010-01-01",1,"1999-01-01");
+
+int res = emp.createEmp(e);
+
+assertEquals(1,res);
+
+}
+
+}

@@ -1,0 +1,86 @@
+package junitTest;
+
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+
+import company.EmpJdbc;
+import company.EmpPojo;
+
+
+
+public class Insert {
+	
+	
+	/*  Testing the Functionality with the Inputs given manually to Test Will PASS
+	 	Else the Test Will Fail */
+		@Test
+		public  void test_UserBased_Insertion() throws Exception {
+			
+		  System.out.println(" manual Based Testng ");
+		  EmpJdbc emp = new EmpJdbc();
+
+		  EmpPojo e = new EmpPojo("vinay","Hyderabad","2010-01-01",1,"1994-01-01");
+
+		  int res = emp.createEmp(e);
+
+		  assertEquals(1,res);
+
+		  if(res==1)
+		  {
+		  System.out.println("manual Based Testing Passed"); 
+		  }
+		  else
+		  {
+		  System.out.println(" manual Based Testing failed"); 	  
+		  }
+	
+	}
+	
+	
+	/* Testing the Functionality with the Manually giving Inputs to the Users 
+	   constructor and then passing the object to insertUsers1(Users u)  which
+	   accepts Users object u as parameter. Establishes Connection with Sql Server
+	   and Inserts 5 Values into table  tb_users of db_lic database	*/
+	@Test
+	public  void test_Manual_Insertion() throws Exception {
+	
+	 Users u = new Users("LIC Jevan ","kholi","2000-01-01","yearly",1000.f);
+	 System.out.println(" Manual Testng By passing Values Manually");	
+		
+	  int res =  Operations.insertUsers1(u); // create and insert operation are same
+	 	
+	  assertEquals(1,res); 
+	  
+	  if(res==1)
+	  {
+	  System.out.println(" ********Manual Based Testing Passed**********"); 
+	  }
+	  else
+	  {
+	  System.out.println(" ******Manual Based Testing failed**********"); 	  
+	  }
+	 
+	}
+
+
+	/* Generates ERROR!!! 
+	 Testing the Functionality with the Manually giving Faulty Input(Date) to the Users 
+	   constructor and then passing the object to insertUsers1(Users u)  which
+	   accepts Users object u as parameter. Establishes Connection with Sql Server
+	   and Inserts 5 Values into table  tb_users of db_lic database
+	@Test
+	public  void test_Error_Insertion() throws Exception {
+	
+	 Users u = new Users("LIC Jevan ","kholi","20001-01-01","year",1000.f);
+	 System.out.println(" Manual passing Faulty Inputs: ERROR DATE");	
+		
+	  int res =  Operations.insertUsers1(u); // create and insert operation are same
+	 	
+	  assertEquals(1,res); */
+	
+	 
+	}
+	
+	
+
+

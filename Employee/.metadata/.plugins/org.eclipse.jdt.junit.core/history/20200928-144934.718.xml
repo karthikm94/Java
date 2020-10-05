@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Insert" project="Employee" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="junitTest.Insert" time="0.515" displayname="Insert" uniqueid="[engine:junit-jupiter]/[class:junitTest.Insert]">
+    <testcase name="test_UserBased_Insertion" classname="junitTest.Insert" time="0.515" displayname="test_UserBased_Insertion()" uniqueid="[engine:junit-jupiter]/[class:junitTest.Insert]/[method:test_UserBased_Insertion()]"/>
+  </testsuite>
+</testrun>
